@@ -2,7 +2,7 @@ lock "~> 3.11.0"
 
 set :application, 'eagle_eyes'
 
-set :repo_url, 'git@github.com:yuanweilin/eagle_eyes.git'
+set :repo_url, 'https://github.com/yuanweilin/eagle_eyes.git'
 set :deploy_to, '/home/deploy/eagle_eyes'
 set :keep_releases, 5
 
