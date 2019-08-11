@@ -2,7 +2,6 @@ class User < ApplicationRecord
   validates :phone, uniqueness: true
 
   def token
-    JWT.encode(phone, Rails.application.secrets.secret_key_base)
+    JWT.encode(phone, Rails.application.credentials.secret_key_base)
   end
 end
-

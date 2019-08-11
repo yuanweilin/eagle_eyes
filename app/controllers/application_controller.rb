@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def auth_token
-    @auth_token ||= JWT.decode(http_token, Rails.application.secrets.secret_key_base)[0]
+    @auth_token ||= JWT.decode(http_token, Rails.application.credentials.secret_key_base)[0]
   end
 
   def token?
