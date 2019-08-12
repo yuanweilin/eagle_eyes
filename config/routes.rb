@@ -7,6 +7,12 @@ Rails.application.routes.draw do
           post :sign_in
         end
       end
+
+      resources :querys, only: [] do
+        collection do
+          get :search
+        end
+      end
     end
   end
 end
