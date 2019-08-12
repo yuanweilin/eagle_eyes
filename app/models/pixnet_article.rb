@@ -1,0 +1,2 @@
+class PixnetArticle < ApplicationRecord
+end
