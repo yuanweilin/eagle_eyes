@@ -11,7 +11,7 @@ class PixnetApi
 
   def search
     @uri = URI('https://emma.pixnet.cc/blog/articles/search')
-    @params = { format: "json", key: keyword, type: "tag", orderby: "public_at_asc", content_filter: "on" }
+    @params = { format: "json", key: keyword, type: "tag", orderby: "public_at_asc", content_filter: "on", per_page: "100" }
     articles = get_api
     articles.present? ? articles.map { |article| Hash["article_id", article["id"], "site_category", article["site_category"], "title", article["title"], "public_at", article["public_at"], "link", article["link"], "image", article["thumb"], "hit", article["info"]["hit"]] } : nil
   end

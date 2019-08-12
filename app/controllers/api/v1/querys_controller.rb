@@ -3,7 +3,7 @@ class Api::V1::QuerysController < ApplicationController
     if params[:keyword]
       articles = PixnetApi.new(params[:keyword]).search
       articles.map{ |article| PixnetArticle.find_or_create_by!(article.merge(keyword: params[:keyword])) }
-      pixnet_articles = PixnetArticle.search(params[:keyword])
+      pixnet_articles = PixnetArticle.search(params[:keyword], 1)
 
       render json: pixnet_articles
     else
