@@ -13,6 +13,13 @@ Rails.application.routes.draw do
           get :search
         end
       end
+
+      resources :trips, only: [] do
+        collection do
+          post :get_trip
+          get :current_trip
+        end
+      end
     end
   end
 end
