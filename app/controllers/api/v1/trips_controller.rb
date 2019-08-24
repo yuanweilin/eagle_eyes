@@ -20,7 +20,7 @@ class Api::V1::TripsController < ApplicationController
     days = (current_trip.end - current_trip.start + 1).to_f
     count = (attractions.count / days).ceil
 
-    render json: attractions.in_groups_of(count, nil).map { |day| ActiveModelSerializers::SerializableResource.new(day).as_json }
+    render json: attractions.in_groups_of(count, false).map { |day| ActiveModelSerializers::SerializableResource.new(day).as_json }
   end
 
   private
