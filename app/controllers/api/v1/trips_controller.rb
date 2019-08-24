@@ -1,6 +1,6 @@
 class Api::V1::TripsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :authenticate!
+  # before_action :authenticate!
   before_action :days, only: [:get_trip]
 
   def get_trip
