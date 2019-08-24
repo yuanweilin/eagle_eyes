@@ -9,7 +9,7 @@ class Trip < ApplicationRecord
   private
 
   def after_create
-    articles.each_with_index do |article_id, index|
+    articles.sample(articles.count).each_with_index do |article_id, index|
       begin
         attractions.create!(article_id: article_id, sort: index + 1)
       rescue
