@@ -2,7 +2,7 @@ class Trip < ApplicationRecord
   attr_accessor :articles
 
   has_many :attractions
-  belongs_to :user
+  # belongs_to :user
 
   after_create :after_create
 

@@ -4,8 +4,17 @@ class Api::V1::TripsController < ApplicationController
   before_action :days, only: [:get_trip]
 
   def get_trip
-    if params[:articles].present? && current_user.create_trip(params[:start], params[:end], params[:articles])
-      attractions = current_user.current_attractions
+    # if params[:articles].present? && current_user.create_trip(params[:start], params[:end], params[:articles])
+    #   attractions = current_user.current_attractions
+    #   count = (attractions.count / @days).ceil
+
+    #   render json: attractions.in_groups_of(count, nil).map { |day| ActiveModelSerializers::SerializableResource.new(day).as_json }
+    # else
+    #   head :bad_request
+    # end
+
+    if params[:articles].present? && (trip = Trip.create(start: params[:start], end: params[:end], articles: params[:articles]))
+      attractions = trip.attractions
       count = (attractions.count / @days).ceil
 
       render json: attractions.in_groups_of(count, nil).map { |day| ActiveModelSerializers::SerializableResource.new(day).as_json }
