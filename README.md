@@ -1,6 +1,7 @@
 Api Document  
 1.使用者註冊  
-  Method           | URL
+  
+  Method        | URL
   --------------|:-----
   Post    | /api/v1/users/sign_up    
   
