@@ -1,5 +1,6 @@
 Api Document  
 1.使用者註冊  
+  Request method & URL
   
   Method        | URL
   --------------|:-----
@@ -10,6 +11,8 @@ Api Document
   Type           | Params  | Values | Note
   --------------|:-----:|-----:| ----
   String(必填)    | phone |   |  
+  
+  Response
   
   Status           | Response
   --------------|:-----
