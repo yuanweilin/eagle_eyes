@@ -1,24 +1,12 @@
-# README
+Api Document
+1.使用者註冊 
+  URL: /api/v1/users/sign_up  POST
+  
+  Params
+    1.必填 phone string
+  Response
+    {  
+      "token": ......
+    }
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+ 
